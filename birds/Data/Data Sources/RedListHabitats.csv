@@ -1,0 +1,127 @@
+Hierarchy1$Hierarchy2$Hierarchy3$HabitatName
+1$0$0$Forest
+1$1$0$Boreal
+1$2$0$Subarctic
+1$3$0$Subantarctic
+1$4$0$Temperate
+1$5$0$Subtropical/tropical dry
+1$6$0$Subtropical/tropical moist lowland
+1$7$0$Subtropical/tropical mangrove vegetation above high tide level
+1$8$0$Subtropical/tropical swamp
+1$9$0$Subtropical/tropical moist montane
+2$0$0$Savanna
+2$1$0$Dry
+2$2$0$Moist
+3$0$0$Shrubland
+3$1$0$Subarctic
+3$2$0$Subantarctic
+3$3$0$Boreal
+3$4$0$Temperate
+3$5$0$Subtropical/tropical dry
+3$6$0$Subtropical/tropical moist
+3$7$0$Subtropical/tropical high altitude
+3$8$0$Mediterranean-type shrubby vegetation
+4$0$0$Grassland
+4$1$0$Tundra
+4$2$0$Subarctic
+4$3$0$Subantarctic
+4$4$0$Temperate
+4$5$0$Subtropical/tropical dry
+4$6$0$Subtropical/tropical seasonally wet/flooded
+4$7$0$Subtropical/tropical high altitude
+5$0$0$Wetlands (inland)
+5$1$0$Permanent rivers/streams/creeks (includes waterfalls)
+5$2$0$Seasonal/intermittent/irregular rivers/streams/creeks
+5$3$0$Shrub dominated wetlands
+5$4$0$Bogs, marshes, swamps, fens, peatlands
+5$5$0$Permanent freshwater lakes (over 8 ha)
+5$6$0$Seasonal/intermittent freshwater lakes (over 8 ha)
+5$7$0$Permanent freshwater marshes/pools (under 8 ha)
+5$8$0$Seasonal/intermittent freshwater marshes/pools (under 8 ha)
+5$9$0$Freshwater springs and oases
+5$10$0$Tundra wetlands (inc. pools and temporary waters from snowmelt)
+5$11$0$Alpine wetlands (inc. temporary waters from snowmelt)
+5$12$0$Geothermal wetlands
+5$13$0$Permanent inland deltas
+5$14$0$Permanent saline, brackish or alkaline lakes
+5$15$0$Seasonal/intermittent saline, brackish or alkaline lakes and flats
+5$16$0$Permanent saline, brackish or alkaline marshes/pools
+5$17$0$Seasonal/intermittent saline, brackish or alkaline marshes/pools
+5$18$0$Karst and other subterranean hydrological systems (inland)
+6$0$0$Rocky Areas (e.g., inland cliffs, mountain peaks)
+7$0$0$Caves & Subterranean Habitats (non-aquatic)
+7$1$0$Caves
+7$2$0$Other subterranean habitats
+8$0$0$Desert
+8$1$0$Hot
+8$2$0$Temperate
+8$3$0$Cold
+9$0$0$Marine Neritic
+9$1$0$Pelagic
+9$2$0$Subtidal rock and rocky reefs
+9$3$0$Subtidal loose rock/pebble/gravel
+9$4$0$Subtidal sandy
+9$5$0$Subtidal sandy-mud
+9$6$0$Subtidal muddy
+9$7$0$Macroalgal/kelp
+9$8$0$Coral Reef
+9$8$1$Outer reef channel
+9$8$2$Back slope
+9$8$3$Foreslope (outer reef slope)
+9$8$4$Lagoon
+9$8$5$Inter-reef soft substrate
+9$8$6$Inter-reef rubble substrate
+9$9$0$Seagrass (Submerged)
+9$10$0$Estuaries
+10$0$0$Marine Oceanic
+10$1$0$Epipelagic (0–200 m)
+10$2$0$Mesopelagic (200–1,000 m)
+10$3$0$Bathypelagic (1,000–4,000 m)
+10$4$0$Abyssopelagic (4,000–6,000 m)
+11$0$0$Marine Deep Ocean Floor (Benthic and Demersal)
+11$1$0$Continental Slope/Bathyl Zone (200–4,000 m)
+11$1$1$Hard Substrate
+11$1$2$Soft Substrate
+11$2$0$Abyssal Plain (4,000–6,000 m)
+11$3$0$Abyssal Mountain/Hills (4,000–6,000 m)
+11$4$0$Hadal/Deep Sea Trench (>6,000 m)
+11$5$0$Seamount
+11$6$0$Deep Sea Vents (Rifts/Seeps)
+12$0$0$Marine Intertidal
+12$1$0$Rocky Shoreline
+12$2$0$Sandy Shoreline and/or Beaches, Sand Bars, Spits, etc.
+12$3$0$Shingle and/or Pebble Shoreline and/or Beaches
+12$4$0$Mud Shoreline and Intertidal Mud Flats
+12$5$0$Salt Marshes (Emergent Grasses)
+12$6$0$Tidepools
+12$7$0$Mangrove Submerged Roots
+13$0$0$Marine Coastal/Supratidal
+13$1$0$Sea Cliffs and Rocky Offshore Islands
+13$2$0$Coastal Caves/Karst
+13$3$0$Coastal Sand Dunes
+13$4$0$Coastal Brackish/Saline Lagoons/Marine Lakes
+13$5$0$Coastal Freshwater Lakes
+14$0$0$Artificial - Terrestrial
+14$1$0$Arable Land
+14$2$0$Pastureland
+14$3$0$Plantations
+14$4$0$Rural Gardens
+14$5$0$Urban Areas
+14$6$0$Subtropical/Tropical Heavily Degraded Former Forest
+15$0$0$Artificial - Aquatic
+15$1$0$Water Storage Areas [over 8 ha]
+15$2$0$Ponds [below 8 ha]
+15$3$0$Aquaculture Ponds
+15$4$0$Salt Exploitation Sites
+15$5$0$Excavations (open)
+15$6$0$Wastewater Treatment Areas
+15$7$0$Irrigated Land [includes irrigation channels]
+15$8$0$Seasonally Flooded Agricultural Land
+15$9$0$Canals and Drainage Channels, Ditches
+15$10$0$Karst and Other Subterranean Hydrological Systems [human-made]
+15$11$0$Marine Anthropogenic Structures
+15$12$0$Mariculture Cages
+15$13$0$Mari/Brackish-culture Ponds
+16$0$0$Introduced Vegetation
+17$0$0$Other
+18$0$0$Unknown

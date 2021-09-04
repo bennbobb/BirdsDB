@@ -1,0 +1,30 @@
+@model birds.Models.Journal
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Journal</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.JournalName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JournalName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.JournalDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JournalDescription)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.JournalID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

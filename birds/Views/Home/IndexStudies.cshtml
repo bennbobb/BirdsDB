@@ -1,0 +1,54 @@
+﻿@model birds.Models.BirdsStatistics
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Birds</h1>
+    <p>A platform for bird data record keeping and analysis</p>
+
+    <br />
+
+    <h4>Site Statistics</h4>
+    <table class="StatTable">
+        <tbody>
+            <tr>
+                <td>Domains: </td>
+                <td>@Html.DisplayFor(modelItem => Model.numDomains)</td>
+            </tr>
+            <tr>
+                <td>Kingdoms: </td>
+                <td>@Html.DisplayFor(modelItem => Model.numKingdoms)</td>
+            </tr>
+            <tr>
+                <td>Phylums: </td>
+                <td>@Html.DisplayFor(modelItem => Model.numPhylums)</td>
+            </tr>
+            <tr>
+                <td>Classes: </td>
+                <td>@Html.DisplayFor(modelItem => Model.numClasses)</td>
+            </tr>
+            <tr>
+                <td>Orders: </td>
+                <td>@Html.DisplayFor(modelItem => Model.numOrders)</td>
+            </tr>
+            <tr>
+                <td>Families: </td>
+                <td>@Html.DisplayFor(modelItem => Model.numFamily)</td>
+            </tr>
+            <tr>
+                <td>Genus: </td>
+                <td>@Html.DisplayFor(modelItem => Model.numGenus)</td>
+            </tr>
+            <tr>
+                <td>Species: </td>
+                <td>@Html.DisplayFor(modelItem => Model.numSpecies)</td>
+            </tr>
+            <tr>
+                <td>Common Names: </td>
+                <td>@Html.DisplayFor(modelItem => Model.numCommonNames)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

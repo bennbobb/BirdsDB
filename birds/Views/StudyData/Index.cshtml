@@ -1,0 +1,113 @@
+@model IEnumerable<birds.Models.StudyData>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Study)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaxSpecies)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaxSubSpecies)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Continent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Latitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Longitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pellets)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PreyRemains)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Observations)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DNA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BodyMass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Num_obs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Study.StudyID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaxSpecies.TaxSpeciesName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaxSubSpecies.TaxSubSpeciesName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Continent.ContinentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country.CountryCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Latitude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Longitude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pellets)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PreyRemains)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observations)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DNA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BodyMass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Num_obs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.StudyDataID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.StudyDataID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.StudyDataID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,6 @@
+﻿A Study is represeted as only Study Author & Year in supplied data
+** Authors can publish multiple studies in same year
+** Authors can some times be publish in multiple journals in same year
+** thus multiple studies can be missrepresented as only being a single study in the DB
+
+Actul study name should be provided along with author and year

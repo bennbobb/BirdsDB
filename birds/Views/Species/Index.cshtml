@@ -1,0 +1,115 @@
+@model PaginatedList<birds.Models.TaxSpecies>
+
+@{ ViewData["Title"] = "Index"; }
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by Species <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+    </div>
+</form>
+<span>@Html.DisplayFor(model => model.TotalResults) results</span>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["GenusSortParm"]"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().TaxGenus)
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["SpeciesSortParm"]"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().TaxSpeciesName)
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["AuthoritySortParm"]"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().Authority)
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["BLRecognisedSortParm"]"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().BirdLifeRecognised)
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["RedListSortParm"]"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().IUNC_RedListCategory)
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["SourcesSortParm"]"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().TaxSources)
+                </a>
+            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().SISRecID)
+        </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.TaxGenus.TaxGenusName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TaxSpeciesName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Authority)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BirdLifeRecognised)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IUNC_RedListCategory)
+    </td>
+    <td>
+        @Html.TextAreaFor(modelItem => item.TaxSources, new { @readonly = true })
+    </td>
+    @*<td>
+        @Html.DisplayFor(modelItem => item.SISRecID)
+    </td>*@
+    <td>
+        <a asp-action="Edit" asp-route-id="@item.TaxSpeciesID">Edit</a> |
+        <a asp-action="Details" asp-route-id="@item.TaxSpeciesID">Details</a> |
+        <a asp-action="Delete" asp-route-id="@item.TaxSpeciesID">Delete</a>
+    </td>
+</tr>}
+    </tbody>
+</table>
+
+@{ var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : ""; }
+
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-pageNumber="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @nextDisabled">
+    Next
+</a>

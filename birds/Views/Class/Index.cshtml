@@ -1,0 +1,98 @@
+@model PaginatedList<birds.Models.TaxClass>
+
+@{ ViewData["Title"] = "Index"; }
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by Class <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+    </div>
+</form>
+<span>@Html.DisplayFor(model => model.TotalResults) results</span>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["ClassSortParm"]"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().TaxClassName)
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["PhylumSortParm"]"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().TaxPhylum.TaxPhylumName)
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["KingdomSortParm"]"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().TaxPhylum.TaxKingdom.TaxKingdomName)
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DomainSortParm"]"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                    @Html.DisplayNameFor(model => model.FirstOrDefault().TaxPhylum.TaxKingdom.TaxDomain.TaxDomainName)
+                </a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        <a asp-controller="Order" asp-action="Index" asp-route-id="@item.TaxClassID">
+            @Html.DisplayFor(modelItem => item.TaxClassName)
+        </a>
+    </td>
+    <td>
+        <a asp-controller="Class" asp-action="Index" asp-route-id="@item.TaxPhylumID">
+            @Html.DisplayFor(modelItem => item.TaxPhylum.TaxPhylumName)
+        </a>
+    </td>
+    <td>
+        <a asp-controller="Phylum" asp-action="Index" asp-route-id="@item.TaxPhylum.TaxKingdomID">
+            @Html.DisplayFor(modelItem => item.TaxPhylum.TaxKingdom.TaxKingdomName)
+        </a>
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TaxPhylum.TaxKingdom.TaxDomain.TaxDomainName)
+    </td>
+    <td>
+        <a asp-action="Edit" asp-route-id="@item.TaxClassID">Edit</a> |
+        <a asp-action="Details" asp-route-id="@item.TaxClassID">Details</a> |
+        <a asp-action="Delete" asp-route-id="@item.TaxClassID">Delete</a>
+    </td>
+</tr>
+}
+    </tbody>
+</table>
+
+@{ var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : ""; }
+
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-pageNumber="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @nextDisabled">
+    Next
+</a>

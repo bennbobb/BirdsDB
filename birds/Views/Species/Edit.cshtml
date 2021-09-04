@@ -1,0 +1,64 @@
+@model birds.Models.TaxSpecies
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TaxSpecies</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TaxSpeciesID" />
+            <div class="form-group">
+                <label asp-for="TaxGenusID" class="control-label"></label>
+                <select asp-for="TaxGenusID" class="form-control" asp-items="ViewBag.TaxGenusID"></select>
+                <span asp-validation-for="TaxGenusID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaxSpeciesName" class="control-label"></label>
+                <input asp-for="TaxSpeciesName" class="form-control" />
+                <span asp-validation-for="TaxSpeciesName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Authority" class="control-label"></label>
+                <input asp-for="Authority" class="form-control" />
+                <span asp-validation-for="Authority" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="BirdLifeRecognised" /> @Html.DisplayNameFor(model => model.BirdLifeRecognised)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="IUNC_RedListCategory" class="control-label"></label>
+                <input asp-for="IUNC_RedListCategory" class="form-control" />
+                <span asp-validation-for="IUNC_RedListCategory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaxSources" class="control-label"></label>
+                <input asp-for="TaxSources" class="form-control" />
+                <span asp-validation-for="TaxSources" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SISRecID" class="control-label"></label>
+                <input asp-for="SISRecID" class="form-control" />
+                <span asp-validation-for="SISRecID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

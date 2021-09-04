@@ -1,0 +1,45 @@
+@model birds.Models.Habitat
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Habitat</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="HabitatHierarchy1" />
+            <input type="hidden" asp-for="HabitatHierarchy2" />
+            <div class="form-group">
+                <label asp-for="HabitatName" class="control-label"></label>
+                <input asp-for="HabitatName" class="form-control" />
+                <span asp-validation-for="HabitatName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HabitatDescription" class="control-label"></label>
+                <input asp-for="HabitatDescription" class="form-control" />
+                <span asp-validation-for="HabitatDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IUNC_RedListRecognised" /> @Html.DisplayNameFor(model => model.IUNC_RedListRecognised)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,65 @@
+@model IEnumerable<birds.Models.HabitatsViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HabitatHierarchyID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HabitatHierarchy1Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HabitatHierarchy2Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HabitatHierarchy3Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HabitatDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IUNC_RedListRecognised)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HabitatHierarchyID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HabitatHierarchy1Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HabitatHierarchy2Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HabitatHierarchy3Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HabitatDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IUNC_RedListRecognised)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
